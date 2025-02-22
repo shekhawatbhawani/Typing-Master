@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Master</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        background-color: #1a1a2e;
+        color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 p-10">
+    <header>
+      <h1 class="text-center text-4xl text-yellow-400 font-extrabold">
+        Typing Master
+      </h1>
+    </header>
+    <main class="mt-10">
+      <div
+        class="flex flex-col md:flex-row justify-between w-full md:w-3/4 mx-auto mb-4"
+      >
+        <input
+          id="wordRange"
+          type="range"
+          min="20"
+          max="100"
+          value="20"
+          class="w-full md:w-1/3 h-2 bg-blue-500 rounded-lg cursor-pointer mb-4 md:mb-0"
+        />
+        <div class="flex justify-between w-full md:w-1/4 text-center">
+          <span>Time: </span>
+          <p id="timer" class="font-bold text-xl text-green-400">60</p>
+        </div>
+      </div>
+
+      <div
+        class="my-10 flex flex-col lg:flex-row justify-between gap-10 w-full md:w-3/4 mx-auto"
+      >
+        <div class="w-full lg:w-2/3">
+          <div class="flex justify-start">
+            <p class="w-full text-justify" id="para"></p>
+          </div>
+          <div class="flex justify-start my-10">
+            <textarea
+              class="w-full text-justify p-3 tracking-[0.15em] border-2 border-gray-400 bg-gray-700 text-white"
+              cols="15"
+              rows="5"
+              name=""
+              placeholder="Start Typing"
+              id="textArea"
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              class="border-blue-500 border-2 px-4 py-2 font-bold text-lg text-gray-400 rounded-lg hover:bg-blue-500 hover:text-white"
+              id="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      id="resultModal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-white text-black p-8 rounded-lg shadow-lg w-3/4 md:w-1/3">
+        <h2 class="text-xl text-black font-bold text-center mb-4">Result</h2>
+        <p>Total Words: <span id="modalTotalWords"></span></p>
+        <p>Correct Words: <span id="modalCorrectWords"></span></p>
+        <p>Incorrect Words: <span id="modalIncorrectWords"></span></p>
+        <div class="text-center mt-4">
+          <button
+            id="closeModal"
+            class="bg-red-500 text-white px-4 py-2 rounded-lg"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
